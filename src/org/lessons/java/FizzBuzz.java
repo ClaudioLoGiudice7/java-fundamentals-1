@@ -1,8 +1,20 @@
 package org.lessons.java;
 
+import java.util.Scanner;
+
 public class FizzBuzz {
     public static void main(String[] args) {
-        for (int i = 1; i <= 100; i++) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Quanti numeri vuoi stampare?");
+        int numbersQuantity = scanner.nextInt();
+
+        if (numbersQuantity <= 0 || numbersQuantity > 1000) {
+            System.out.println("Il numero inserito non è valido. Devi inserire un numero compreso tra 1 e 1000");
+            return;
+        }
+
+        for (int i = 1; i <= numbersQuantity; i++) {
             if (i % 3 == 0 && i % 5 == 0) {
                 System.out.println("FizzBuzz");
             } else if (i % 3 == 0) {
