@@ -1,5 +1,6 @@
 package org.lessons.java;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class TrainTicket {
@@ -17,7 +18,10 @@ public class TrainTicket {
 
         double totalPrice = calculatePrice(km, age, euroPerKm, discountUnder18, discountOver65);
 
-        System.out.println("Il prezzo totale è: " + "€" + totalPrice);
+        DecimalFormat decimalFormat = new DecimalFormat("#.##");
+        String formattedPrice = decimalFormat.format(totalPrice);
+
+        System.out.println("Il prezzo totale è: " + "€" + formattedPrice);
     }
 
     public static double calculatePrice(int km, int age, double euroPerKm, double discountUnder18, double discountOver65) {
